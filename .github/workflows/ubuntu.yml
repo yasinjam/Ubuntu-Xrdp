@@ -1,0 +1,36 @@
+name: Ubuntu-VM
+on: 
+  workflow_dispatch:
+defaults:
+  run:
+    shell: bash
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Creating User to Login
+      run: sudo useradd -m runneradmin && sudo adduser runneradmin sudo && echo 'runneradmin:Area69Lab' | sudo chpasswd
+      
+      # To Install different Environment replace their commands. by default it Install 'Ubuntu'
+      
+      # Ubuntu default will take upto 6-7 min
+      # sudo apt update && sudo apt install ubuntu-desktop
+      
+      # For Deepin (3-4 min)
+      # sudo apt update && sudo add-apt-repository ppa:ubuntudde-dev/stable -y && sudo apt install ubuntudde-dde
+      
+      # For XFCE (2-3 min) Lite weight
+      # sudo apt update && sudo apt install xfce4 && sudo chmod 777 /home/runneradmin/ && echo xfce4-session >/home/runneradmin/.xsession
+      
+    - name: Installing Desktop Environment (wait for 5 min)
+      run: sudo apt update && sudo apt install ubuntu-desktop
+    - name: Installing Xrdp
+      run: sudo apt install xrdp -y && sudo service xrdp restart
+    - name: Installing Ngrok
+      run: wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-amd64.zip -O ngrok.zip && unzip ngrok.zip
+    - name: Creating Tunnel
+      env:
+       ngroktoken: ${{ secrets.NGROK_AUTH_TOKEN }}
+      run: |
+           ./ngrok authtoken $ngroktoken
+           ./ngrok tcp 3389
