@@ -1,7 +1,5 @@
 # Ubuntu-Xrdp
 
-Note: This is just for Testing and Deployment of Applications, and Debugging Purpose. I do not encourage to misuse of Github Actions! Thanks (c) [@Area69Lab](https://t.me/Area69Lab)
-
 Steps: 
 
 1. You need authtoken to get access the VM
@@ -16,8 +14,10 @@ Steps:
 
    https://dashboard.ngrok.com/status/tunnels
 
-by Default Username: runneradmin
+by Default Username: Area69Lab
 
 by Default Password : Area69Lab
 
 #### have a Good day :)
+
+Note: This is just for Testing and Deployment of Applications, and Debugging Purpose. I do not encourage to misuse of Github Actions! Thanks © [Area69Lab](https://t.me/Area69Lab)
