@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - name: Creating User to Login
-      run: sudo useradd -m Area69Lab && sudo adduser Area69Lab sudo && echo 'Area69Lab:Area69Lab' | sudo chpasswd
+      run: sudo useradd -m sarthakroy2002 && sudo adduser sarthakroy2002 sudo && echo 'sarthakroy2002:sarthakroy2002' | sudo chpasswd
       
       # To Install different Environment replace their commands. by default it Install 'Ubuntu'
       
@@ -20,7 +20,7 @@ jobs:
       # sudo apt update && sudo add-apt-repository ppa:ubuntudde-dev/stable -y && sudo apt install ubuntudde-dde
       
       # For XFCE (2-3 min) Lite weight
-      # sudo apt update && sudo apt install xfce4 && sudo chmod 777 /home/Area69Lab/ && echo xfce4-session >/home/Area69Lab/.xsession
+      # sudo apt update && sudo apt install xfce4 && sudo chmod 777 /home/sarthakroy2002/ && echo xfce4-session >/home/sarthakroy2002/.xsession
       
     - name: Installing Desktop Environment (wait for 5 min)
       run: sudo apt update && sudo add-apt-repository ppa:ubuntudde-dev/stable -y && sudo apt install ubuntudde-dde
