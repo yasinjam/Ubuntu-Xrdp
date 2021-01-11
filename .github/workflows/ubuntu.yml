@@ -16,6 +16,9 @@ jobs:
       # Ubuntu default will take upto 6-7 min
       # sudo apt update && sudo apt install ubuntu-desktop
       
+      # For KDE Plasma (5-6 min)
+      # sudo apt update && sudo apt install tasksel && sudo tasksel install kubuntu-desktop
+      
       # For Deepin (3-4 min)
       # sudo apt update && sudo add-apt-repository ppa:ubuntudde-dev/stable -y && sudo apt install ubuntudde-dde
       
